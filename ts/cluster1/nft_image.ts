@@ -15,14 +15,14 @@ umi.use(signerIdentity(signer));
 
 (async () => {
     try {
-        //1. Load image
-        //2. Convert image to generic file.
-        //3. Upload image
+        // 1. Load image
+        const file = await readFile('/home/agent/solana-starter/ts/generug.png');
+        // 2. Convert image to generic file.
+        const image = createGenericFile(file, "rug", {contentType: "image/png"});
+        // 3. Upload image
 
-        // const image = ???
-
-        // const [myUri] = ??? 
-        // console.log("Your image URI: ", myUri);
+        const [myUri] = await umi.uploader.upload([image]);
+        console.log("Your image URI: ", myUri);
     }
     catch(error) {
         console.log("Oops.. Something went wrong", error);
