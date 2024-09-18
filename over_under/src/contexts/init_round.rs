@@ -11,17 +11,15 @@ use crate::state::Global;
 #[derive(Accounts)]
 #[instruction(_round: u64)]
 pub struct RoundC<'info> {
-    // thread
+    // signer
     #[account(mut)]
     pub thread: Signer<'info>,
 
-    // the pubkey of the signer of init global
-    #[account(mut)]
+    #[account(address = global.house)]
     pub house: SystemAccount<'info>,
 
     // global account which is a pda of the program ID and the house pubkey
     #[account(
-        mut,
         seeds = [b"global", house.key().as_ref()],
         bump
     )]
@@ -32,6 +30,8 @@ pub struct RoundC<'info> {
     pub round: Box<Account<'info, Round>>,
 
     // vault pda of the round account
+    /// DOCS: mut must be placed with the vault during initRound or a non-House player will not be able to call placeBet without the House key playing the first bet of each Round (this throws an unkown action undefined error for the player). 
+    /// With the mut, any player can call placeBet in a Round with 0 bets. 
     #[account(mut, seeds = [b"vault", round.key().as_ref()], bump)]
     pub vault: SystemAccount<'info>,
 
@@ -43,13 +43,20 @@ impl <'info> RoundC<'info> {
     pub fn init(&mut self, _round: u64, bumps: &BTreeMap<String, u8>) -> Result<()> {
         self.round.set_inner(Round {
             round: _round,
-            number: 101,
-            outcome: 0, // 0 for false, 1 for true, 2 for tie
-            // players with a max length of 100
-            players: Vec::with_capacity(100),
-            winners: Vec::with_capacity(100),
+            number: 101, 
+            outcome: 3,
+            bets: Vec::with_capacity(10),
+            players: Vec::with_capacity(10),
             bump: *bumps.get("round").unwrap(),
+            vault_bump: *bumps.get("vault").unwrap(),
         });
+
+        msg!("round.round: {}", self.round.round);
+        msg!("round.number: {}", self.round.number);
+        msg!("round.outcome: {}", self.round.outcome);
+        msg!("round.bets.len(): {}", self.round.bets.len());
+        msg!("round.players.len(): {}", self.round.players.len());
+        
         Ok(())
     }
 }
