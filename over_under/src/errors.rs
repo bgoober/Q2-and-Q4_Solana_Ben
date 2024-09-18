@@ -30,6 +30,16 @@ pub enum Error {
     Ed25519Accounts,
     #[msg("Ed25119 Data Length Error")]
     Ed25519DataLength,
-    #[msg("Winner Account Not Found")]
-    WinnerAccountNotFound
+    #[msg("Round Already Played")]
+    RoundAlreadyPlayed,
+    #[msg("Round Still Ongoing")]
+    RoundStillOngoing,
+    #[msg("Round Not Yet Played!")]
+    RoundNotYetPlayed,
+    #[msg("No Bets In Round")]
+    NoBetsInRound,
+    #[msg("Round Mismatch")]
+    RoundMismatch,
+    #[msg("10 Player Maximum Reached. Try again next round!")]
+    Max10PlayersReached
 }

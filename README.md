@@ -2,6 +2,8 @@
 
 WBA -- Quarter 2, 2024, Solana developer's course.
 
+I've copy/pasted the program files and test into this repository, but the link back to my personal repository for over_under has fully working environment.
+
 Capstone Repository:
 
 https://github.com/bgoober/over_under
