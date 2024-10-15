@@ -3,7 +3,7 @@ import { Keypair, PublicKey, Connection, Commitment } from "@solana/web3.js";
 import { getOrCreateAssociatedTokenAccount, mintTo } from '@solana/spl-token';
 
 // Import a JSON file that contains the secret key for a wallet
-import wallet from "../wba-wallet.json"
+import wallet from "../../Turbin3-wallet.json"
 
 // Create a keypair object from the secret key in the wallet
 const keypair = Keypair.fromSecretKey(new Uint8Array(wallet));
@@ -17,7 +17,7 @@ const connection = new Connection("https://api.devnet.solana.com", commitment);
 const token_decimals = 1_000_000n;
 
 // Define the public key for the mint (from the spl_init.ts script)
-const mint = new PublicKey("78pYjiQUvBSHNc6Bf53jdCWDqYEXgQKB6ov16H4JBeZz");
+const mint = new PublicKey("6NY93SqtrcWEpNisbNh614vrCLSgoeT9hLbg9tVw9N1m");
 
 // Define an asynchronous function that will be immediately invoked
 (async () => {

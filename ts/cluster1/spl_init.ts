@@ -3,7 +3,7 @@ import { Keypair, Connection, Commitment } from "@solana/web3.js";
 import { createMint } from '@solana/spl-token';
 
 // Import a JSON file that contains the secret key for a wallet
-import wallet from "../wba-wallet.json"
+import wallet from "../../Turbin3-wallet.json"
 
 // Import the connect function from the http2 module
 import { connect } from "http2";
