@@ -1,4 +1,4 @@
-import wallet from "../wba-wallet.json"
+import wallet from "../../Turbin3-wallet.json"
 import { createUmi } from "@metaplex-foundation/umi-bundle-defaults"
 import { 
     createMetadataAccountV3, 
@@ -10,7 +10,7 @@ import {
 import { createSignerFromKeypair, signerIdentity, publicKey, keypairPayer } from "@metaplex-foundation/umi";
 
 // Define our Mint address
-const mint = publicKey("78pYjiQUvBSHNc6Bf53jdCWDqYEXgQKB6ov16H4JBeZz")
+const mint = publicKey("6NY93SqtrcWEpNisbNh614vrCLSgoeT9hLbg9tVw9N1m")
 
 // Create a UMI connection
 const umi = createUmi('https://api.devnet.solana.com');
@@ -27,8 +27,8 @@ umi.use(signerIdentity(createSignerFromKeypair(umi, keypair)));
          }
 
          let data: DataV2Args = {
-            name: "YOLO",
-            symbol: "YOLO",
+            name: "QWERTY",
+            symbol: "QWERTY",
             uri: "",
             sellerFeeBasisPoints: 1, // for the creator of the collection? or for the seller (not collection owner)?
             creators: null,
