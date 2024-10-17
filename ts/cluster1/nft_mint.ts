@@ -2,7 +2,7 @@ import { createUmi } from "@metaplex-foundation/umi-bundle-defaults"
 import { createSignerFromKeypair, signerIdentity, generateSigner, percentAmount } from "@metaplex-foundation/umi"
 import { createNft, mplTokenMetadata } from "@metaplex-foundation/mpl-token-metadata";
 
-import wallet from "../wba-wallet.json"
+import wallet from "../../Turbin3-wallet.json"
 import base58 from "bs58";
 
 const RPC_ENDPOINT = "https://api.devnet.solana.com";
@@ -19,9 +19,9 @@ const mint = generateSigner(umi);
 
     let tx = createNft(umi, {
         mint,
-        name: "blueboi",
-        symbol: "BB",
-        uri: "https://arweave.net/j6G276QDwyxMhmo5qlqz2A3qcLTZv0VATk_Rx1zEkCk", // the metadata URI, not the image URI. The image URI is inside the metadata.
+        name: "ORANJ",
+        symbol: "ORJ",
+        uri: "https://devnet.irys.xyz/7epkmEMRy6sy4RFxRqvCEVs8enzZJbJPM47xc4j27SSL", // the metadata URI, not the image URI. The image URI is inside the metadata.
         sellerFeeBasisPoints: percentAmount(1)
     })
     let result = await tx.sendAndConfirm(umi);

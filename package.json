@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "@metaplex-foundation/mpl-core": "^1.1.1",
+    "@metaplex-foundation/umi": "^0.9.2",
+    "@metaplex-foundation/umi-bundle-defaults": "^0.9.2",
+    "@metaplex-foundation/umi-uploader-irys": "^0.10.0-beta.0"
+  },
+  "scripts": {
+    "nft_image": "ts-node ./ts/cluster1/nft_image.ts",
+    "nft_mint": "ts-node ./ts/cluster1/nft_mint.ts",
+    "nft_metadata": "ts-node ./ts/cluster1/nft_metadata.ts"
+  },
+  "packageManager": "yarn@4.2.2+sha512.c44e283c54e02de9d1da8687025b030078c1b9648d2895a65aab8e64225bfb7becba87e1809fc0b4b6778bbd47a1e2ab6ac647de4c5e383a53a7c17db6c3ff4b",
+  "devDependencies": {
+    "@types/bs58": "^4.0.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}

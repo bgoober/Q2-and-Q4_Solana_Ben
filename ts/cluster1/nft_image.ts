@@ -1,4 +1,4 @@
-import wallet from "../wba-wallet.json"
+import wallet from "../../Turbin3-wallet.json"
 import { createUmi } from "@metaplex-foundation/umi-bundle-defaults"
 import { createGenericFile, createSignerFromKeypair, signerIdentity } from "@metaplex-foundation/umi"
 import { irysUploader } from "@metaplex-foundation/umi-uploader-irys"
@@ -16,7 +16,7 @@ umi.use(signerIdentity(signer));
 (async () => {
     try {
         // 1. Load image
-        const file = await readFile('/home/agent/solana-starter/ts/generug.png');
+        const file = await readFile('/home/agent/Ben_Sol_2Q24/ts/rug.png');
         // 2. Convert image to generic file.
         const image = createGenericFile(file, "rug", {contentType: "image/png"});
         // 3. Upload image
@@ -28,3 +28,4 @@ umi.use(signerIdentity(signer));
         console.log("Oops.. Something went wrong", error);
     }
 })();
+

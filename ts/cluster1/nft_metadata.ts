@@ -1,7 +1,8 @@
-import wallet from "../wba-wallet.json"
+import { mplCore } from '@metaplex-foundation/mpl-core'
 import { createUmi } from "@metaplex-foundation/umi-bundle-defaults"
 import { createGenericFile, createSignerFromKeypair, signerIdentity } from "@metaplex-foundation/umi"
 import { irysUploader } from "@metaplex-foundation/umi-uploader-irys"
+import wallet from "../../Turbin3-wallet.json"
 
 // Create a devnet connection
 const umi = createUmi('https://api.devnet.solana.com');
@@ -17,21 +18,21 @@ umi.use(signerIdentity(signer));
         // Follow this JSON structure
         // https://docs.metaplex.com/programs/token-metadata/changelog/v1.0#json-structure
 
-        const image = 'https://pdgbdew2s32ym2oufndtcwbhdkvokttfrk4fq75fju77wtik62ma.arweave.net/eMwRktqW9YZp1CtHMVgnGqrlTmWKuFh_pU0_-00K9pg'
+        const image = 'https://arweave.net/7epkmEMRy6sy4RFxRqvCEVs8enzZJbJPM47xc4j27SSL'
         const metadata = {
-            name: "blueboi",
-            symbol: "BB",
-            description: "it's blue",
-            image: "https://pdgbdew2s32ym2oufndtcwbhdkvokttfrk4fq75fju77wtik62ma.arweave.net/eMwRktqW9YZp1CtHMVgnGqrlTmWKuFh_pU0_-00K9pg",
+            name: "ORANJ",
+            symbol: "ORJ",
+            description: "it's orange",
+            image: "https://arweave.net/7epkmEMRy6sy4RFxRqvCEVs8enzZJbJPM47xc4j27SSL",
             attributes: [
-                {trait_type: 'basethread', value: 'blue'},
-                {trait_type: 'offthread', value: 'green'},
+                {trait_type: 'basethread', value: 'orange'},
+                {trait_type: 'offthread', value: 'blue'},
             ],
             properties: {
                 files: [
                     {
                         type: "image/png",
-                        uri: "https://pdgbdew2s32ym2oufndtcwbhdkvokttfrk4fq75fju77wtik62ma.arweave.net/eMwRktqW9YZp1CtHMVgnGqrlTmWKuFh_pU0_-00K9pg"
+                        uri: "https://arweave.net/7epkmEMRy6sy4RFxRqvCEVs8enzZJbJPM47xc4j27SSL"
                     },
                 ]
             },
@@ -44,3 +45,6 @@ umi.use(signerIdentity(signer));
         console.log("Oops.. Something went wrong", error);
     }
 })();
+
+
+//  console.log("Your image URI: ", myUri.replace("arweave.net", "devnet.irys.xyz"));
