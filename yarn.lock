@@ -1876,6 +1876,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"csv-writer@npm:^1.6.0":
+  version: 1.6.0
+  resolution: "csv-writer@npm:1.6.0"
+  checksum: 2e62cb46f00b674f0710eb90586000601f3a467aabe529464dcb402d453a1322a716d7522ef3282dd6551f1059305c7dd3db49def1201caaf340597dcf7b4c7e
+  languageName: node
+  linkType: hard
+
 "csv@npm:5.5.3":
   version: 5.5.3
   resolution: "csv@npm:5.5.3"
@@ -3186,6 +3193,7 @@ __metadata:
     "@metaplex-foundation/umi-bundle-defaults": ^0.9.2
     "@metaplex-foundation/umi-uploader-irys": ^0.10.0-beta.0
     "@types/bs58": ^4.0.4
+    csv-writer: ^1.6.0
     ts-node: ^10.9.2
     typescript: ^5.6.3
   languageName: unknown

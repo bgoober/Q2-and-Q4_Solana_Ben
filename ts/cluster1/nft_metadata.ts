@@ -18,12 +18,12 @@ umi.use(signerIdentity(signer));
         // Follow this JSON structure
         // https://docs.metaplex.com/programs/token-metadata/changelog/v1.0#json-structure
 
-        const image = 'https://arweave.net/7epkmEMRy6sy4RFxRqvCEVs8enzZJbJPM47xc4j27SSL'
+        const image = 'https://devnet.irys.xyz/7epkmEMRy6sy4RFxRqvCEVs8enzZJbJPM47xc4j27SSL'
         const metadata = {
             name: "ORANJ",
             symbol: "ORJ",
             description: "it's orange",
-            image: "https://arweave.net/7epkmEMRy6sy4RFxRqvCEVs8enzZJbJPM47xc4j27SSL",
+            image: "https://devnet.irys.xyz/7epkmEMRy6sy4RFxRqvCEVs8enzZJbJPM47xc4j27SSL",
             attributes: [
                 {trait_type: 'basethread', value: 'orange'},
                 {trait_type: 'offthread', value: 'blue'},
@@ -32,7 +32,7 @@ umi.use(signerIdentity(signer));
                 files: [
                     {
                         type: "image/png",
-                        uri: "https://arweave.net/7epkmEMRy6sy4RFxRqvCEVs8enzZJbJPM47xc4j27SSL"
+                        uri: "https://devnet.irys.xyz/7epkmEMRy6sy4RFxRqvCEVs8enzZJbJPM47xc4j27SSL"
                     },
                 ]
             },
